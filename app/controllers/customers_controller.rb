@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
   before_action :set_customer, only: %i[ show edit update destroy ]
 
   # GET /customers or /customers.json
@@ -55,6 +56,12 @@ class CustomersController < ApplicationController
       format.html { redirect_to customers_url, notice: "Customer was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def catch_not_found(e)
+    Rails.logger.debug("We had a not found exception.")
+    flash.alert = e.to_s
+    redirect_to customers_path
   end
 
   private
