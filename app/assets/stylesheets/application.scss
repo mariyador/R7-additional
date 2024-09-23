@@ -13,7 +13,45 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import "font-awesome";
 
- .my_alert {
+
+ @font-face {
+  font-family: 'SirinStencil-Regular';
+  src: url('SirinStencil-Regular.ttf');
+}
+
+.my_alert {
     color: red;
   }
+
+:root {
+  --bs-body-bg: #d4c58e;
+}
+  
+.banner {
+  background-color: #a0b3a1;
+  background-image: url('23181794_6678341.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 30px; 
+  margin: 20px;
+  margin-bottom: 20px;
+  text-align: center; 
+  color: #272525; 
+  border-radius: 8px;
+  font-family: 'SirinStencil-Regular';}
+  
+.banner h1 {
+  font-size: 2em; 
+  margin: 0; 
+}
+  
+.banner p {
+  font-size: 1.2em; 
+  margin-top: 10px; 
+}
+
+

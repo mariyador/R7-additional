@@ -11,23 +11,23 @@
       </div>
     <% end %>
   
-    <div>
+    <div class= 'mt-2'>
       <%= form.label :product_name %>
       <%= form.text_field :product_name %>
     </div>
   
-    <div>
+    <div class= 'mt-2'>
       <%= form.label :product_count %>
       <%= form.number_field :product_count %>
     </div>
   
-    <div>
-    <%= form.label :customer_id, "Customer" %>
-    <%= form.collection_select :customer_id, @customers, :id, :full_name, include_blank: true %>
-  </div>
-  
-    <div>
-      <%= form.submit %>
+    <div class= 'mt-2'>
+        <%= form.label :customer_id, "Customer" %>
+        <%= form.collection_select :customer_id, @customers, :id, :full_name, include_blank: true %>
     </div>
-  <% end %>
+  
+    <div class="mt-3">
+        <%= form.submit class: 'btn', style: 'background-color: #4b6b55; color: white;' %>
+    </div>
+<% end %>
   

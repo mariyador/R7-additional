@@ -1,17 +1,21 @@
-<!-- app/views/orders/show.html.erb -->
-<p style="color: green"><%= notice %></p>
+<div class="container" style="margin: 50px;">
+  <div class="d-flex justify-content-between mb-3">
+    <div class='w-50'>
+      <h2><%= @order.product_name %></h2>
+      <p><strong>Count:</strong> <%= @order.product_count %></p>
+      <p><strong>Customer:</strong> <%= @order.customer.full_name %></p>
+    </div>
 
-<div>
-  <h2><%= @order.product_name %></h2>
-  <p>Count: <%= @order.product_count %></p>
-  <p>Customer: <%= @order.customer.full_name %></p> <!-- Adjust as necessary -->
-</div>
+    <div class="d-flex align-items-start">
+      <%= link_to icon('fa-regular', 'edit'), edit_order_path(@order), class: "btn btn-primary me-2" %>
+      <%= button_to icon('fa-regular', 'trash'), @order, method: :delete, class: 'btn btn-danger', style: 'background-color: #e63946; color: white;' %>
+    </div>
+  </div>
 
-
-<div>
-  <%= link_to "Edit this order", edit_order_path(@order) %> |
-  <%= link_to "Back to orders", orders_path %> |
-  <%= link_to "Back to customers", customers_path %>
-
-  <%= button_to "Destroy this order", @order, method: :delete %>
+  <div class="d-flex justify-content-between mt-4">
+    <div>
+      <%= link_to "Back to orders", orders_path, class: "btn btn-secondary me-2" %>
+      <%= link_to "Back to customers", customers_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
 </div>
