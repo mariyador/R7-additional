@@ -30,6 +30,13 @@ gem "jbuilder"
 #Validation
 gem 'email_validator'
 
+#RSpec Testing
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'rails-controller-testing'
+gem 'rexml'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
