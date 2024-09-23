@@ -1,0 +1,17 @@
+<!-- app/views/orders/show.html.erb -->
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <h2><%= @order.product_name %></h2>
+  <p>Count: <%= @order.product_count %></p>
+  <p>Customer: <%= @order.customer.full_name %></p> <!-- Adjust as necessary -->
+</div>
+
+
+<div>
+  <%= link_to "Edit this order", edit_order_path(@order) %> |
+  <%= link_to "Back to orders", orders_path %> |
+  <%= link_to "Back to customers", customers_path %>
+
+  <%= button_to "Destroy this order", @order, method: :delete %>
+</div>
