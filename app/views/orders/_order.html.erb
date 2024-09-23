@@ -1,0 +1,9 @@
+<div class="position-relative">
+  <div class="d-flex justify-content-end">
+    <%= link_to icon('fa-regular', 'edit'), edit_order_path(order), class: 'btn btn-primary me-2' %> 
+    <%= button_to icon('fa-regular', 'trash'), order, method: :delete, class: 'btn', style: 'background-color: #e63946; color: white;' %>
+  </div>
+  <h2><%= order.product_name %></h2>
+  <p>Count: <%= order.product_count %></p>
+  <p>Customer: <%= order.customer.full_name %></p>
+</div>

@@ -1,0 +1,30 @@
+<h1>Customers</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Number of Orders</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+
+      <tr>
+        <td><%= "#{customer.first_name} #{customer.last_name}" %></td>
+        <td><%= customer.orders.count %></td>
+        <td class="d-flex justify-content-around">
+          <%= link_to icon('fa-regular', 'eye'), customer_path(customer), class: 'btn btn-primary'  %> 
+          <%= link_to icon('fa-regular', 'edit'), edit_customer_path(customer), class: 'btn btn-primary' %> 
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal-<%= customer.id %>">
+            <%= icon('fa-regular', 'trash') %>
+          </button>      
+        </td>
+      </tr>
+      <%= render partial: 'deleteModal', locals: { customer: customer } %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add New Customer', new_customer_path, class: 'btn', style: 'background-color: #4b6b55; color: white;'%>

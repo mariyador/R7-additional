@@ -1,0 +1,18 @@
+<h1 class="my-4">Orders</h1>
+
+<div id="orders" class="row">
+  <% @orders.each do |order| %>
+    <div class="col-md-4 mb-3">
+      <div class="card" style="background-color: #c5d9cf;">
+        <div class="card-body">
+          <%= render order %>
+        </div>
+        <div class='mb-2 d-flex justify-content-end'>
+            <%= link_to icon('fa-regular', 'eye'), order, class: 'btn me-2', style: 'background-color: #696b6a; color: white;' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New Order", new_order_path, class: 'btn', style: 'background-color: #4b6b55; color: white;' %>
